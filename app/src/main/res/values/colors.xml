@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="common_button">#F08C35</color>
+    <color name="common_button_text">#000000</color>
+    <color name="bottom_button">#FF0000</color>
+    <color name="bottom_button_text">#FFFFFF</color>
+\</resources>

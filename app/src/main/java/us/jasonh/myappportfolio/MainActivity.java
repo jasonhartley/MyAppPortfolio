@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
+    private Toast mAppToast;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,16 +29,24 @@ public class MainActivity extends ActionBarActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
 
     public void showToast(View view) {
+        if (mAppToast != null) {
+            mAppToast.cancel();
+        }
+
         Button button = (Button) view;
-        Toast.makeText(getApplicationContext(), "This button will launch " + button.getText(),
-                Toast.LENGTH_SHORT).show();
+        String message = "This button will launch " + button.getText();
+        mAppToast = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+        mAppToast.show();
+
+//        Toast.makeText(getApplicationContext(), "This button will launch " + button.getText(),
+//                Toast.LENGTH_SHORT).show();
     }}
